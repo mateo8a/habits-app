@@ -7,6 +7,6 @@
 
 import UIKit
 
-class FinishedBuildersController: UITableViewController {
+class EndedBuildersController: UITableViewController {
     
 }

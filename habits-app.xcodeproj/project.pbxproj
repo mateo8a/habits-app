@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A2018DF729FF2A51007E09F4 /* CurrentBuildersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2018DF629FF2A51007E09F4 /* CurrentBuildersController.swift */; };
 		A2018DF929FF2A5E007E09F4 /* DesiredBuildersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2018DF829FF2A5E007E09F4 /* DesiredBuildersController.swift */; };
-		A2A1C1FB2A005AD3008597D8 /* FinishedBuildersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A1C1FA2A005AD2008597D8 /* FinishedBuildersController.swift */; };
+		A2A1C1FB2A005AD3008597D8 /* EndedBuildersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A1C1FA2A005AD2008597D8 /* EndedBuildersController.swift */; };
 		A2D7EAD429FEC4010049C0B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7EAD329FEC4010049C0B5 /* AppDelegate.swift */; };
 		A2D7EAD629FEC4010049C0B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7EAD529FEC4010049C0B5 /* SceneDelegate.swift */; };
 		A2D7EAD829FEC4010049C0B5 /* BuildersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7EAD729FEC4010049C0B5 /* BuildersViewController.swift */; };
@@ -42,7 +42,7 @@
 /* Begin PBXFileReference section */
 		A2018DF629FF2A51007E09F4 /* CurrentBuildersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBuildersController.swift; sourceTree = "<group>"; };
 		A2018DF829FF2A5E007E09F4 /* DesiredBuildersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredBuildersController.swift; sourceTree = "<group>"; };
-		A2A1C1FA2A005AD2008597D8 /* FinishedBuildersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedBuildersController.swift; sourceTree = "<group>"; };
+		A2A1C1FA2A005AD2008597D8 /* EndedBuildersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedBuildersController.swift; sourceTree = "<group>"; };
 		A2D7EAD029FEC4010049C0B5 /* habits-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "habits-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D7EAD329FEC4010049C0B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2D7EAD529FEC4010049C0B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 				A2D7EAD529FEC4010049C0B5 /* SceneDelegate.swift */,
 				A2D7EAD729FEC4010049C0B5 /* BuildersViewController.swift */,
 				A2018DF629FF2A51007E09F4 /* CurrentBuildersController.swift */,
-				A2A1C1FA2A005AD2008597D8 /* FinishedBuildersController.swift */,
+				A2A1C1FA2A005AD2008597D8 /* EndedBuildersController.swift */,
 				A2018DF829FF2A5E007E09F4 /* DesiredBuildersController.swift */,
 				A2D7EAD929FEC4010049C0B5 /* Main.storyboard */,
 				A2D7EADF29FEC4030049C0B5 /* Assets.xcassets */,
@@ -275,7 +275,7 @@
 				A2018DF729FF2A51007E09F4 /* CurrentBuildersController.swift in Sources */,
 				A2018DF929FF2A5E007E09F4 /* DesiredBuildersController.swift in Sources */,
 				A2D7EADE29FEC4010049C0B5 /* habits_app.xcdatamodeld in Sources */,
-				A2A1C1FB2A005AD3008597D8 /* FinishedBuildersController.swift in Sources */,
+				A2A1C1FB2A005AD3008597D8 /* EndedBuildersController.swift in Sources */,
 				A2D7EAD629FEC4010049C0B5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

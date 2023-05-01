@@ -108,7 +108,7 @@
         <!--Finished Builders View Controller-->
         <scene sceneID="GqE-aQ-Qnc">
             <objects>
-                <tableViewController id="s1l-b6-cge" userLabel="Finished Builders View Controller" customClass="FinishedBuildersController" customModule="habits_app" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="s1l-b6-cge" userLabel="Finished Builders View Controller" customClass="EndedBuildersController" customModule="habits_app" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="veR-wx-oQC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,7 +128,7 @@
                             <outlet property="delegate" destination="s1l-b6-cge" id="pX3-XQ-ZPE"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Finished" id="w7N-0c-Pvs"/>
+                    <tabBarItem key="tabBarItem" title="Ended" id="w7N-0c-Pvs" userLabel="Ended"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2p9-2D-sJV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
