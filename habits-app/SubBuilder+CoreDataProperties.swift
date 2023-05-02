@@ -1,5 +1,5 @@
 //
-//  BuilderRun+CoreDataProperties.swift
+//  SubBuilder+CoreDataProperties.swift
 //  habits-app
 //
 //  Created by Mateo Ochoa on 2023-05-01.
@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-extension BuilderRun {
+extension SubBuilder {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<BuilderRun> {
-        return NSFetchRequest<BuilderRun>(entityName: "BuilderRun")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<SubBuilder> {
+        return NSFetchRequest<SubBuilder>(entityName: "SubBuilder")
     }
 
     @NSManaged public var value: Int16
@@ -23,6 +23,6 @@ extension BuilderRun {
 
 }
 
-extension BuilderRun : Identifiable {
+extension SubBuilder : Identifiable {
 
 }

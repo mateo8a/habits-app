@@ -24,24 +24,24 @@ extension Builder {
     @NSManaged public var success: Bool
     @NSManaged public var valueEarned: Int16
     @NSManaged public var allOrNothing: Bool
-    @NSManaged public var builderRuns: NSSet?
+    @NSManaged public var subBuilders: NSSet?
 
 }
 
-// MARK: Generated accessors for builderRuns
+// MARK: Generated accessors for subBuilders
 extension Builder {
 
-    @objc(addBuilderRunsObject:)
-    @NSManaged public func addToBuilderRuns(_ value: BuilderRun)
+    @objc(addSubBuildersObject:)
+    @NSManaged public func addToSubBuilders(_ value: SubBuilder)
 
-    @objc(removeBuilderRunsObject:)
-    @NSManaged public func removeFromBuilderRuns(_ value: BuilderRun)
+    @objc(removeSubBuildersObject:)
+    @NSManaged public func removeFromSubBuilders(_ value: SubBuilder)
 
-    @objc(addBuilderRuns:)
-    @NSManaged public func addToBuilderRuns(_ values: NSSet)
+    @objc(addSubBuilders:)
+    @NSManaged public func addToSubBuilders(_ values: NSSet)
 
-    @objc(removeBuilderRuns:)
-    @NSManaged public func removeFromBuilderRuns(_ values: NSSet)
+    @objc(removeSubBuilders:)
+    @NSManaged public func removeFromSubBuilders(_ values: NSSet)
 
 }
 

@@ -9,12 +9,12 @@
         <attribute name="success" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="totalValue" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="valueEarned" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="builderRuns" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BuilderRun" inverseName="builder" inverseEntity="BuilderRun"/>
+        <relationship name="subBuilders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SubBuilder" inverseName="builder" inverseEntity="SubBuilder"/>
     </entity>
-    <entity name="BuilderRun" representedClassName="BuilderRun" syncable="YES">
+    <entity name="SubBuilder" representedClassName="SubBuilder" syncable="YES">
         <attribute name="finished" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="success" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="value" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="builder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Builder" inverseName="builderRuns" inverseEntity="Builder"/>
+        <relationship name="builder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Builder" inverseName="subBuilders" inverseEntity="Builder"/>
     </entity>
 </model>
