@@ -6,7 +6,16 @@
 //
 
 import UIKit
+import CoreData
 
 class CurrentBuildersController: UITableViewController {
     
+    var persistentContainer: NSPersistentContainer {
+        let tabBarController = tabBarController as! BuildersViewController
+        return tabBarController.persistentContainer
+    }
+    
+    override func viewDidLoad() {
+        print(persistentContainer)
+    }
 }

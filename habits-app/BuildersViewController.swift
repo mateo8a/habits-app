@@ -6,14 +6,29 @@
 //
 
 import UIKit
+import CoreData
 
 class BuildersViewController: UITabBarController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+    let persistentContainer = {
+        let container = NSPersistentContainer(name: "habits_app")
+        container.loadPersistentStores { description, error in
+            if let error = error {
+                print("Error setting up Core Data (\(error)).")
+            }
+        }
+        return container
+    }()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "newBuilder":
+            let newBuilderController = segue.destination as! InitialNewBuilderController
+            newBuilderController.persistentContainer = persistentContainer
+        default:
+            print("Unknown segue identifier")
+        }
     }
-
-
+    
 }
 
