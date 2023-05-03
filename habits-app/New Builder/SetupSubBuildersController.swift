@@ -12,5 +12,29 @@ class SetupSubBuildersController: UIViewController {
     
     var persistentContainer: NSPersistentContainer!
     var builder: Builder!
+    var subBuildersController: NewSubBuildersTableViewController!
     
+    override func viewDidLoad() {
+        navigationItem.title = builder.name
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "newSubBuildersList":
+            let destination = segue.destination as! NewSubBuildersTableViewController
+            destination.persistentContainer = persistentContainer
+            destination.builder = builder
+            subBuildersController = destination
+        default:
+            preconditionFailure("Unknown segue identifier")
+        }
+    }
+    
+    @IBAction func addSubBuilder(_ sender: UIButton) {
+        subBuildersController.addNewSubBuilderRow()
+    }
+    
+    @IBAction func continueSetup(_ sender: UIButton) {
+        
+    }
 }

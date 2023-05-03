@@ -19,23 +19,34 @@ class InitialNewBuilderController: UIViewController {
     var builder: Builder!
     
     override func viewDidLoad() {
-        saveForLater.addTarget(self, action: #selector(addNewBuilder(sender:)), for: .touchUpInside)
+        saveForLater.addTarget(self, action: #selector(addAndSaveNewBuilder(sender:)), for: .touchUpInside)
         startNow.addTarget(self, action: #selector(addNewBuilder(sender:)), for: .touchUpInside)
         
     }
     
     @objc func addNewBuilder(sender: UIButton) {
-        print("save name and total cash value")
+        createNewBuilder()
+        performSegue(withIdentifier: "setupSubBuilders", sender: sender)
+        
+    }
+    
+    @objc func addAndSaveNewBuilder(sender: UIButton) {
+        createNewBuilder()
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            print("Error saving new builder \(error)")
+        }
+    }
+    
+    private func createNewBuilder() {
         let context = persistentContainer.viewContext
         context.performAndWait {
-            builder = Builder(context: context)
+            if builder == nil {
+                builder = Builder(context: context)
+            }
             setUpNewBuilder(builder)
         }
-//        do {
-//            try context.save()
-//        } catch {
-//            print("Error saving new builder \(error)")
-//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,7 +56,7 @@ class InitialNewBuilderController: UIViewController {
             controller.builder = builder
             controller.persistentContainer = persistentContainer
         default:
-            print("Unknown segue identifier")
+            preconditionFailure("Unknown segue identifier")
         }
     }
     

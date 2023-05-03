@@ -167,7 +167,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Sx5-MH-e7r" userLabel="Name Field">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test builder" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Sx5-MH-e7r" userLabel="Name Field">
                                         <rect key="frame" x="0.0" y="24.333333333333329" width="373" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -178,7 +178,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3c4-oL-bVl" userLabel="Total Cash Value Field">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3c4-oL-bVl" userLabel="Total Cash Value Field">
                                         <rect key="frame" x="0.0" y="86.666666666666657" width="373" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -195,9 +195,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="124.33333333333333" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="Start now"/>
-                                        <connections>
-                                            <segue destination="6fu-fU-inE" kind="show" identifier="setupSubBuilders" id="4br-gY-9WR"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jms-tp-qTO">
                                         <rect key="frame" x="172.33333333333331" y="0.0" width="124.33333333333331" height="34.333333333333336"/>
@@ -223,6 +220,7 @@
                         <outlet property="saveForLater" destination="Jms-tp-qTO" id="xze-z3-nEd"/>
                         <outlet property="startNow" destination="jEz-B2-thC" id="44h-rf-NeT"/>
                         <outlet property="totalCashValue" destination="3c4-oL-bVl" id="ZFH-eB-Y1U"/>
+                        <segue destination="6fu-fU-inE" kind="show" identifier="setupSubBuilders" id="ojf-pa-xMQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFv-CA-ylV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -236,14 +234,77 @@
                     <view key="view" contentMode="scaleToFill" id="Mbl-rk-zJT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JN2-BY-lfL">
+                                <rect key="frame" x="0.0" y="128" width="393" height="646"/>
+                                <connections>
+                                    <segue destination="f9Q-Ra-sTl" kind="embed" identifier="newSubBuildersList" id="iyF-t3-xy6"/>
+                                </connections>
+                            </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="0fJ-8v-GSR">
+                                <rect key="frame" x="-0.33333333333334281" y="783.66666666666663" width="393.66666666666674" height="34.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUX-oq-EY7">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Add new sub builder"/>
+                                        <connections>
+                                            <action selector="addSubBuilder:" destination="6fu-fU-inE" eventType="touchUpInside" id="Ncd-oZ-GOT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIU-6r-qQf">
+                                        <rect key="frame" x="214" y="0.0" width="179.66666666666663" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Continue set up"/>
+                                        <connections>
+                                            <action selector="continueSetup:" destination="6fu-fU-inE" eventType="touchUpInside" id="EGq-6R-DDw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule the times you will do your activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXN-lo-9Jy">
+                                <rect key="frame" x="15" y="103" width="327.66666666666669" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4jC-8s-xIz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JN2-BY-lfL" firstAttribute="top" secondItem="IXN-lo-9Jy" secondAttribute="bottom" constant="5" id="6jQ-Wf-QHr"/>
+                            <constraint firstItem="IXN-lo-9Jy" firstAttribute="top" secondItem="4jC-8s-xIz" secondAttribute="top" id="CYU-xv-mdy"/>
+                            <constraint firstItem="0fJ-8v-GSR" firstAttribute="centerX" secondItem="Mbl-rk-zJT" secondAttribute="centerX" id="DKu-Ig-dIF"/>
+                            <constraint firstItem="JN2-BY-lfL" firstAttribute="leading" secondItem="4jC-8s-xIz" secondAttribute="leading" id="ICv-hW-Yi5"/>
+                            <constraint firstItem="IXN-lo-9Jy" firstAttribute="leading" secondItem="4jC-8s-xIz" secondAttribute="leading" constant="15" id="RkO-kr-llA"/>
+                            <constraint firstItem="4jC-8s-xIz" firstAttribute="bottom" secondItem="0fJ-8v-GSR" secondAttribute="bottom" id="XXz-5J-9SC"/>
+                            <constraint firstItem="4jC-8s-xIz" firstAttribute="trailing" secondItem="JN2-BY-lfL" secondAttribute="trailing" id="Ydy-Ds-Npm"/>
+                            <constraint firstItem="0fJ-8v-GSR" firstAttribute="top" secondItem="JN2-BY-lfL" secondAttribute="bottom" constant="10" id="miX-hZ-k4g"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="L0u-YM-FQf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KrL-cX-16S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1484.7328244274809" y="-999.29577464788736"/>
+        </scene>
+        <!--New Sub Builders Table View Controller-->
+        <scene sceneID="dGT-Vb-QeU">
+            <objects>
+                <tableViewController id="f9Q-Ra-sTl" customClass="NewSubBuildersTableViewController" customModule="habits_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="yZ6-28-1Si">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="646"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="f9Q-Ra-sTl" id="3A8-fD-Fsu"/>
+                            <outlet property="delegate" destination="f9Q-Ra-sTl" id="6wO-Bw-ngD"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cW8-u9-mLJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1485" y="-1663"/>
         </scene>
     </scenes>
     <resources>

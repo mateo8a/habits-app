@@ -26,6 +26,9 @@
 		A2D7EAF829FEC4040049C0B5 /* habits_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7EAF729FEC4040049C0B5 /* habits_appUITests.swift */; };
 		A2D7EAFA29FEC4040049C0B5 /* habits_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7EAF929FEC4040049C0B5 /* habits_appUITestsLaunchTests.swift */; };
 		A2D8E6962A01AFB70097424C /* SetupSubBuildersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8E6952A01AFB70097424C /* SetupSubBuildersController.swift */; };
+		A2D8E6982A02D9AB0097424C /* NewSubBuildersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8E6972A02D9AA0097424C /* NewSubBuildersTableViewController.swift */; };
+		A2D8E69A2A0314C60097424C /* NewSubBuilderCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2D8E6992A0314C60097424C /* NewSubBuilderCustomCell.xib */; };
+		A2D8E69C2A0316380097424C /* NewSubBuilderCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8E69B2A0316380097424C /* NewSubBuilderCustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		A2D7EAF729FEC4040049C0B5 /* habits_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habits_appUITests.swift; sourceTree = "<group>"; };
 		A2D7EAF929FEC4040049C0B5 /* habits_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habits_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A2D8E6952A01AFB70097424C /* SetupSubBuildersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupSubBuildersController.swift; sourceTree = "<group>"; };
+		A2D8E6972A02D9AA0097424C /* NewSubBuildersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubBuildersTableViewController.swift; sourceTree = "<group>"; };
+		A2D8E6992A0314C60097424C /* NewSubBuilderCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewSubBuilderCustomCell.xib; sourceTree = "<group>"; };
+		A2D8E69B2A0316380097424C /* NewSubBuilderCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubBuilderCustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,9 @@
 			children = (
 				A2A1C2302A0170C2008597D8 /* InitialNewBuilderController.swift */,
 				A2D8E6952A01AFB70097424C /* SetupSubBuildersController.swift */,
+				A2D8E6972A02D9AA0097424C /* NewSubBuildersTableViewController.swift */,
+				A2D8E69B2A0316380097424C /* NewSubBuilderCustomCell.swift */,
+				A2D8E6992A0314C60097424C /* NewSubBuilderCustomCell.xib */,
 			);
 			path = "New Builder";
 			sourceTree = "<group>";
@@ -269,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2D8E69A2A0314C60097424C /* NewSubBuilderCustomCell.xib in Resources */,
 				A2D7EAE329FEC4030049C0B5 /* LaunchScreen.storyboard in Resources */,
 				A2D7EAE029FEC4030049C0B5 /* Assets.xcassets in Resources */,
 				A2D7EADB29FEC4010049C0B5 /* Main.storyboard in Resources */,
@@ -297,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2D7EAD829FEC4010049C0B5 /* BuildersViewController.swift in Sources */,
+				A2D8E6982A02D9AB0097424C /* NewSubBuildersTableViewController.swift in Sources */,
 				A2A1C22A2A0089EE008597D8 /* Builder+CoreDataClass.swift in Sources */,
 				A2D7EAD429FEC4010049C0B5 /* AppDelegate.swift in Sources */,
 				A2A1C22C2A0089EE008597D8 /* SubBuilder+CoreDataClass.swift in Sources */,
@@ -308,6 +319,7 @@
 				A2D8E6962A01AFB70097424C /* SetupSubBuildersController.swift in Sources */,
 				A2A1C1FB2A005AD3008597D8 /* EndedBuildersController.swift in Sources */,
 				A2A1C2312A0170C2008597D8 /* InitialNewBuilderController.swift in Sources */,
+				A2D8E69C2A0316380097424C /* NewSubBuilderCustomCell.swift in Sources */,
 				A2D7EAD629FEC4010049C0B5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
