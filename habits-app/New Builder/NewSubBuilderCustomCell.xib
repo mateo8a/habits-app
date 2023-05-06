@@ -25,9 +25,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="H4I-fF-gPO">
-                                <rect key="frame" x="164" y="0.0" width="219" height="44"/>
+                                <rect key="frame" x="153" y="0.0" width="230" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="219" id="5gA-z0-qwJ"/>
+                                    <constraint firstAttribute="width" constant="230" id="5gA-z0-qwJ"/>
                                 </constraints>
                             </datePicker>
                         </subviews>

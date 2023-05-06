@@ -19,6 +19,7 @@ class InitialNewBuilderController: UIViewController {
     var builder: Builder!
     
     override func viewDidLoad() {
+        navigationItem.title = "New Builder"
         saveForLater.addTarget(self, action: #selector(addAndSaveNewBuilder(sender:)), for: .touchUpInside)
         startNow.addTarget(self, action: #selector(addNewBuilder(sender:)), for: .touchUpInside)
         

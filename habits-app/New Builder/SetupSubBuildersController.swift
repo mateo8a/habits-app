@@ -25,6 +25,10 @@ class SetupSubBuildersController: UIViewController {
             destination.persistentContainer = persistentContainer
             destination.builder = builder
             subBuildersController = destination
+        case "AllOrNothingSetup":
+            let destination = segue.destination as! FinalNewBuilderController
+            destination.persistentContainer = persistentContainer
+            destination.builder = builder
         default:
             preconditionFailure("Unknown segue identifier")
         }

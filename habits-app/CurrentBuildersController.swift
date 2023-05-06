@@ -11,7 +11,7 @@ import CoreData
 class CurrentBuildersController: UITableViewController {
     
     var persistentContainer: NSPersistentContainer {
-        let tabBarController = tabBarController as! BuildersViewController
+        let tabBarController = tabBarController as! MainScreenViewController
         return tabBarController.persistentContainer
     }
     
