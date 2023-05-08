@@ -11,5 +11,5 @@ import CoreData
 
 @objc(Builder)
 public class Builder: NSManagedObject {
-
+    var newSubBuilders = [SubBuilder]()
 }

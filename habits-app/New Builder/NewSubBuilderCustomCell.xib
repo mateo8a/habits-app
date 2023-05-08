@@ -9,28 +9,64 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newSubBuilderCell" id="zev-dR-K4D" customClass="NewSubBuilderCustomCell" customModule="habits_app" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="84"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zev-dR-K4D" id="wzk-r0-pu5">
-                <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="393" height="84"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="X5J-0b-qeN">
-                        <rect key="frame" x="10" y="0.0" width="383" height="44"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="X5J-0b-qeN">
+                        <rect key="frame" x="10" y="0.0" width="383" height="84"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bj1-YW-Bse">
-                                <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="44"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="H4I-fF-gPO">
-                                <rect key="frame" x="153" y="0.0" width="230" height="44"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="juR-6a-ePu" userLabel="Labels">
+                                <rect key="frame" x="0.0" y="0.0" width="62" height="84"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGe-ag-5Pz" userLabel="Value Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All-day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dye-s3-SW9">
+                                        <rect key="frame" x="0.0" y="42" width="62" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="EGe-ag-5Pz" firstAttribute="centerY" secondItem="juR-6a-ePu" secondAttribute="centerY" multiplier="0.5" id="3Zu-hD-W2a"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mtB-aC-14l" userLabel="Fields">
+                                <rect key="frame" x="62" y="0.0" width="91" height="84"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1aK-pa-fkb" userLabel="Value Field">
+                                        <rect key="frame" x="0.0" y="0.0" width="91" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="As9-O1-LSz">
+                                        <rect key="frame" x="0.0" y="52" width="93" height="32"/>
+                                        <connections>
+                                            <action selector="switchCalendarMode:" destination="zev-dR-K4D" eventType="valueChanged" id="QgQ-K9-huS"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1aK-pa-fkb" firstAttribute="centerY" secondItem="mtB-aC-14l" secondAttribute="centerY" multiplier="0.5" id="bp3-Fk-WVC"/>
+                                </constraints>
+                            </stackView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="H4I-fF-gPO">
+                                <rect key="frame" x="153" y="0.0" width="230" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="230" id="5gA-z0-qwJ"/>
                                 </constraints>
                             </datePicker>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="84" id="bij-Pa-T2z"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
@@ -41,8 +77,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="calendarSwitch" destination="As9-O1-LSz" id="RHE-GX-Zmy"/>
                 <outlet property="datePicked" destination="H4I-fF-gPO" id="3QL-zk-fmS"/>
-                <outlet property="name" destination="bj1-YW-Bse" id="GZk-Bf-Bax"/>
+                <outlet property="valueField" destination="1aK-pa-fkb" id="9NR-5O-ZNl"/>
             </connections>
             <point key="canvasLocation" x="-486.25954198473278" y="13.380281690140846"/>
         </tableViewCell>

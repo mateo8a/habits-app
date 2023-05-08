@@ -12,51 +12,59 @@ class NewSubBuildersTableViewController: UITableViewController {
     
     var persistentContainer: NSPersistentContainer!
     var builder: Builder!
-    var newSubBuilders = Set<SubBuilder>()
     
     override func viewDidLoad() {
-        newSubBuilders = builder.subBuilders! as CFSet as! Set<SubBuilder>
         tableView.register(UINib(nibName: "NewSubBuilderCustomCell", bundle: nil), forCellReuseIdentifier: "newSubBuilderCell")
+        tableView.allowsSelection = true
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        let newSubBuilders = newSubBuilders as NSSet
-        builder.addToSubBuilders(newSubBuilders)
+        for (index, subBuilder) in builder.newSubBuilders.enumerated() {
+            let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as! NewSubBuilderCustomCell
+            subBuilder.builder = builder
+            subBuilder.cashValue = NumberFormatter().number(from: cell.valueField.text!)! as! Int16
+            subBuilder.dayToBeDone = cell.datePicked.date
+        }
     }
     
     func addNewSubBuilderRow() {
-        
-        let new = SubBuilder(context: persistentContainer.viewContext)
-        newSubBuilders.insert(new)
-        let row = tableView.numberOfRows(inSection: 0)
+        let row = builder.newSubBuilders.count
+        let newSubBulder = SubBuilder(context: persistentContainer.viewContext)
+        newSubBulder.cashValue = 10
+        builder.newSubBuilders.append(newSubBulder)
         let indexPath = IndexPath(row: row, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
     }
     
+    func validateSubBuilders() throws {
+        var totalValue: Int16 = 0
+        for (index, _) in builder.newSubBuilders.enumerated() {
+            let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as! NewSubBuilderCustomCell
+            let cashValue = NumberFormatter().number(from: cell.valueField.text!)! as! Int16
+            if (cashValue) <= 0 {
+                throw NewSubBuilderError.NoCashValue
+            }
+            totalValue += cashValue
+        }
+        if totalValue != builder.totalCashValue {
+            throw NewSubBuilderError.TotalValueError
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let rows: Int = newSubBuilders.count
-//        if subBuilders.count > 0 {
-//            rows = subBuilders.count
-//        } else {
-//            rows = 1
-//        }
-        return rows
+        return builder.newSubBuilders.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = UITableViewCell()
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "newSubBuilderCell", for: indexPath) as! NewSubBuilderCustomCell
+        let subBuilder = builder.newSubBuilders[indexPath.row]
+        cell.datePicked.date = subBuilder.dayToBeDone ?? Date()
+        cell.valueField.text = subBuilder.cashValue.description
         
-        cell.name.text = "floo"
-        cell.datePicked.date = Date()
-//        switch indexPath.row {
-//        case 0:
-//            if let subBuilders = subBuilders {
-//                // populate cell with subBuilders[0]
-//            }
-//        default:
-//            print("r")
-//            // populate cell with info from subBuilders[indexPath.row]
-//        }
         return cell
     }
 }

@@ -10,7 +10,7 @@ import CoreData
 
 class InitialNewBuilderController: UIViewController {
     
-    @IBOutlet var name: UITextField!
+    @IBOutlet var nameField: UITextField!
     @IBOutlet var totalCashValue: UITextField!
     @IBOutlet var saveForLater: UIButton!
     @IBOutlet var startNow: UIButton!
@@ -45,6 +45,8 @@ class InitialNewBuilderController: UIViewController {
         context.performAndWait {
             if builder == nil {
                 builder = Builder(context: context)
+                let newSubBuilder = SubBuilder(context: context)
+                builder.newSubBuilders.append(newSubBuilder)
             }
             setUpNewBuilder(builder)
         }
@@ -62,7 +64,7 @@ class InitialNewBuilderController: UIViewController {
     }
     
     func setUpNewBuilder(_ builder: Builder) {
-        builder.name = name.text
+        builder.name = nameField.text
         builder.totalCashValue = numberFormatter.number(from: totalCashValue.text!) as! Int16
 //        builder.allOrNothing = allOrNothing.selectedSegmentIndex == 0
 //        if startNow.selectedSegmentIndex == 0 {
